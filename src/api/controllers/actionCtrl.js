@@ -4,7 +4,8 @@ const rosnodejs = require('rosnodejs');
 const Twist = rosnodejs.require('geometry_msgs').msg.Twist;
 
 
-exports.postAction = function(req, res) {
+//exports.postAction =
+exports function myRos() {
 
   rosnodejs.initNode('/simulation', {onTheFly: true}).then((rosNode) => {
     let cmd_vel = rosNode.advertise('/turtle1/cmd_vel','geometry_msgs/Twist', {
@@ -19,10 +20,11 @@ exports.postAction = function(req, res) {
       angular: { x: 0, y: 0, z: 1.8 }
     });
     cmd_vel.publish(msgTwist);
-
+/*
     let move = req.body.move;
     let response = { result: 'This is an action: ' + move };
     return res.json(response);
+*/
   });
 };
 

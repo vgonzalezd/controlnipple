@@ -12,9 +12,22 @@ body {
   background-color: #555555;
 }
 
-.joystick{
-  width: 400px;
-  margin:20px;
-  height: 400px;
-  background-color: #AAAAAA;
+.BotonLeft{
+  position:absolute;
+  right: 15%;
+}
+
+.BotonRight{
+  position:absolute;
+  right: 5%;
+}
+
+.BotonUp{
+  position:absolute;
+  left: 15%;
+}
+
+.BotonDown{
+  position:absolute;
+  left: 5%;
 }

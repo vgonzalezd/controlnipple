@@ -4,7 +4,55 @@
   $(document).ready(function() {
     var base = $('base').text();
     //alert(base);
+/*
+    $(".moveButton").on("click touchstart",function(e){
+        if(e.type=="click") {
 
+
+          console.log(this.data);
+          var movimiento=$(this).data('move');
+          $.ajax({
+            type: 'post',
+            dataType: 'json',
+            url: base + '/action',
+            data: { move: movimiento },
+          })
+          .done(function(data) {
+            console.log("success");
+            console.log(data);
+            //alert(data.result);
+          })
+          .fail(function() {
+            console.log("error");
+          })
+          .always(function() {
+            console.log("complete");
+          });
+
+
+
+
+            alert("Mouse");
+            alert(e.type);
+        }
+
+
+
+        else if(e.type=="touchend"){
+            alert("Touch");
+            alert(e.type);
+            e.preventDefault();
+            e.stopPropagation();
+        }
+    });
+*/
+
+
+
+
+
+
+/*
     $('.moveButton').click(function() {
         console.log(this.data);
         var movimiento=$(this).data('move');
@@ -17,7 +65,7 @@
         .done(function(data) {
           console.log("success");
           console.log(data);
-          alert(data.result);
+          //alert(data.result);
         })
         .fail(function() {
           console.log("error");
@@ -26,51 +74,8 @@
           console.log("complete");
         });
     });
+  */
 
-
-    var j1 = nipplejs.create({
-        zone: document.getElementById('j1'),
-        color: 'white',
-        mode: 'static',
-        position: {left:"300px", top:"50%"},
-        size: 200
-    });
-
-    var j2 = nipplejs.create({
-        zone: document.getElementById('j2'),
-        color: 'red',
-        mode: 'static',
-        position: {left:"100px", top:"50%"},
-        size: 200
-    });
-
-    j1.on("move", function(event, data){
-      //console.log(data.direction.x);
-      console.log(data.angle.radian);
-      var auxiliar=$(this).data.angle.radian('move');
-      $.ajax({
-        type: 'post',
-        dataType: 'json',
-        url: base + '/action',
-        data: { move: auxiliar },
-      })
-      .done(function(data) {
-        console.log("success");
-        console.log(data);
-        alert(data.result);
-      })
-      .fail(function() {
-        console.log("error");
-      })
-      .always(function() {
-        console.log("complete");
-      });
-    });
-
-    j2.on("move", function(event, data){
-      console.log(data.direction.y);
-
-    });
 
 
     // if (j1.data.direction.x!=0 & j2.data.direction.y!=0)
